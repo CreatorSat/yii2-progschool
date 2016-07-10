@@ -57,4 +57,22 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'zyx/zyx-phpmailer' => 
+  array (
+    'name' => 'zyx/zyx-phpmailer',
+    'version' => '0.9.2.0',
+    'alias' => 
+    array (
+      '@zyx/phpmailer' => $vendorDir . '/zyx/zyx-phpmailer',
+    ),
+  ),
+  'yiisoft/yii2-imagine' => 
+  array (
+    'name' => 'yiisoft/yii2-imagine',
+    'version' => '2.0.3.0',
+    'alias' => 
+    array (
+      '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine',
+    ),
+  ),
 );

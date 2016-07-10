@@ -8,6 +8,8 @@ $params = array_merge(
     require(__DIR__ . '/params-local.php')
 );
 
+Yii::setAlias('@test', '@frontend/test');
+
 return [
     // название проекту:
     'id' => 'app-frontend',
@@ -17,8 +19,29 @@ return [
     'bootstrap' => ['log'],
     // дл€ работы автолоадинга в Yii. “о есть дл€ поиска контроллеров беретс€ неймспейс frontend\controllers
     'controllerNamespace' => 'frontend\controllers',
+    // модули
+    'modules' => [
+        'main' => [
+            'class' => 'app\modules\main\Module',
+        ],
+    ],
     // компоненты приложени€ (расширени€, библиотеки)
     'components' => [
+        // zyx-phpmailer. Yii2 расширение
+        'mail' => [
+            'class'            => 'zyx\phpmailer\Mailer',
+            'viewPath'         => '@common/mail', // шаблон лежит в common
+            'useFileTransport' => false,
+            'config'           => [
+                'mailer'     => 'smtp',
+                'host'       => 'smtp.yandex.ru',
+                'port'       => '465',
+                'smtpsecure' => 'ssl',
+                'smtpauth'   => true,
+                'username'   => '', // прописать логин
+                'password'   => '', // прописать пароль
+            ],
+        ],
         // дл€ работы авторизации
         'user' => [
             'identityClass' => 'common\models\User',
