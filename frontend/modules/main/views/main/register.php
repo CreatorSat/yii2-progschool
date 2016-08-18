@@ -2,8 +2,9 @@
     <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
 
         <? $form = \yii\bootstrap\ActiveForm::begin([
-            'enableClientValidation' => false,
-            'enableAjaxValidation' => false,
+            'id' => 'register-form',
+//            'enableClientValidation' => false,
+            'enableAjaxValidation' => true,
         ]); ?>
 
         <?= $form->field($model, 'username'); ?>

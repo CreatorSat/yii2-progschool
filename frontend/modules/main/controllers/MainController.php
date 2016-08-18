@@ -1,6 +1,7 @@
 <?php
 namespace app\modules\main\controllers;
 
+use frontend\models\ContactForm;
 use frontend\models\Image;
 use frontend\models\SignupForm;
 use yii\web\Controller;
@@ -10,6 +11,20 @@ use yii\widgets\ActiveForm;
 class MainController extends Controller
 {
     public $layout = "inner";
+
+    public function actions()
+    {
+        return [
+            'captcha' => [
+                'class' => '\yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+            // custom action
+            'test' => [
+                'class' => 'frontend\actions\TestAction',
+            ]
+        ];
+    }
 
     public function actionIndex()
     {
@@ -23,15 +38,24 @@ class MainController extends Controller
         $model = new SignupForm;
 
         if (\Yii::$app->request->isAjax && \Yii::$app->request->isPost) {
+            $model->load(\Yii::$app->request->post());
             \Yii::$app->response->format = Response::FORMAT_JSON;
             return ActiveForm::validate($model);
         }
 
-        if ($model->load(\Yii::$app->request->post()) && $model->signup()) {
+        // $model->load автоматически присвоит всем атрибутам значения из массива post
+        // $model->validate() валидирует переданные данные и заполняет модель ошибками (если они есть)
+        if (!\Yii::$app->request->isAjax && $model->load(\Yii::$app->request->post()) && $model->validate()/* && $model->signup()*/) {
             print_r($model->getAttributes());
             die;
         }
 
         return $this->render("register", ['model' => $model]);
+    }
+
+    public function actionContact()
+    {
+        $model = new ContactForm();
+        return $this->render("contact", ['model' => $model]);
     }
 }
