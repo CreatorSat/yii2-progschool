@@ -43,8 +43,8 @@ class MainController extends Controller
             return ActiveForm::validate($model);
         }
 
-        // $model->load автоматически присвоит всем атрибутам значения из массива post
-        // $model->validate() валидирует переданные данные и заполняет модель ошибками (если они есть)
+        // $model->load пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ post
+        // $model->validate() пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ)
         if (!\Yii::$app->request->isAjax && $model->load(\Yii::$app->request->post()) && $model->validate()/* && $model->signup()*/) {
             print_r($model->getAttributes());
             die;
@@ -56,6 +56,11 @@ class MainController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
+
+        if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
+            die("Form data is sending!!!");
+        }
+
         return $this->render("contact", ['model' => $model]);
     }
 }
