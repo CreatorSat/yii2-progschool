@@ -2,7 +2,9 @@
     <div class="col-lg-6 col-sm-6">
 
         <?
-        $form = \yii\bootstrap\ActiveForm::begin();
+        $form = \yii\bootstrap\ActiveForm::begin([
+            'enableClientValidation' => false,
+        ]);
         ?>
 
         <?= $form->field($model, 'name') ?>
