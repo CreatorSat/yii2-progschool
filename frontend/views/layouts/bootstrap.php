@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
-// Ïîäêëþ÷àåì íàø MainAsset
-\frontend\assets\MainAsset::register($this); // $this - òåðóùèé îáúåêò êëàññà View ?>
+// ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ð½Ð°Ñˆ MainAsset
+\frontend\assets\MainAsset::register($this); // $this - Ñ‚ÐµÑ€ÑƒÑ‰Ð¸Ð¹ Ð¾Ð±ÑŠÐµÐºÑ‚ ÐºÐ»Ð°ÑÑÐ° View ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,19 +9,19 @@ use yii\helpers\Html;
     <title><?= $this->title ?></title>
     <meta charset="<?= Yii::$app->charset?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <?= Html::csrfMetaTags() /*Çàùèòà îò csrf àòàê*/?>
+    <?= Html::csrfMetaTags() /*Ð—Ð°Ñ‰Ð¸Ñ‚Ð° Ð¾Ñ‚ csrf Ð°Ñ‚Ð°Ðº*/?>
     <?php $this->head() ?>
 </head>
 
 <body>
 <?php $this->beginBody() ?>
 
-<? // Ïîäêëþ÷åíèå âëîæåííîãî øàáëîíà: ?>
+<? // ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ Ð²Ð»Ð¾Ð¶ÐµÐ½Ð½Ð¾Ð³Ð¾ ÑˆÐ°Ð±Ð»Ð¾Ð½Ð°: ?>
 <?= $this->render('//common/head'); ?>
 
 <?= $content ?>
 
-<? // Ïîäêëþ÷åíèå âëîæåííîãî øàáëîíà: ?>
+<? // ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ Ð²Ð»Ð¾Ð¶ÐµÐ½Ð½Ð¾Ð³Ð¾ ÑˆÐ°Ð±Ð»Ð¾Ð½Ð°: ?>
 <?= $this->render('//common/footer'); ?>
 
 <!-- Modal -->

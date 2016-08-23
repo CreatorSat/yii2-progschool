@@ -43,8 +43,8 @@ class MainController extends Controller
             return ActiveForm::validate($model);
         }
 
-        // $model->load ������������� �������� ���� ��������� �������� �� ������� post
-        // $model->validate() ���������� ���������� ������ � ��������� ������ �������� (���� ��� ����)
+        // $model->load автоматически присвоит всем атрибутам значения из массива post
+        // $model->validate() валидирует переданные данные и заполняет модель ошибками (если они есть)
         if (!\Yii::$app->request->isAjax && $model->load(\Yii::$app->request->post()) && $model->validate()/* && $model->signup()*/) {
             print_r($model->getAttributes());
             die;

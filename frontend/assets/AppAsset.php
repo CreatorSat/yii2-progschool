@@ -6,20 +6,20 @@ use yii\web\AssetBundle;
 
 /**
  * Main frontend application asset bundle.
- * Класс отвечает за подключение ресурсов (js скрипты, стили, картинки)
+ * РљР»Р°СЃСЃ РѕС‚РІРµС‡Р°РµС‚ Р·Р° РїРѕРґРєР»СЋС‡РµРЅРёРµ СЂРµСЃСѓСЂСЃРѕРІ (js СЃРєСЂРёРїС‚С‹, СЃС‚РёР»Рё, РєР°СЂС‚РёРЅРєРё)
  */
 class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-    // стили
+    // СЃС‚РёР»Рё
     public $css = [
         'css/site.css',
     ];
-    // скрипты
+    // СЃРєСЂРёРїС‚С‹
     public $js = [
     ];
-    // подключение зависимостей
+    // РїРѕРґРєР»СЋС‡РµРЅРёРµ Р·Р°РІРёСЃРёРјРѕСЃС‚РµР№
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',

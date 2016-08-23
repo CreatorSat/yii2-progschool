@@ -22,23 +22,23 @@ class DefaultController extends Controller
 
     public function actionEvent() {
         $component = new Common();
-        // подключение обработчика:
+        // РїРѕРґРєР»СЋС‡РµРЅРёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєР°:
         $component->on(Common::EVENT_NOTIFY, [$component, 'notifyAdmin']);
-        // вызываем метод, в котором объявлено событие
+        // РІС‹Р·С‹РІР°РµРј РјРµС‚РѕРґ, РІ РєРѕС‚РѕСЂРѕРј РѕР±СЉСЏРІР»РµРЅРѕ СЃРѕР±С‹С‚РёРµ
         $component->sendMail("test@domain.com","Test","Test text");
-        // отключение обработчика:
+        // РѕС‚РєР»СЋС‡РµРЅРёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєР°:
         $component->off(Common::EVENT_NOTIFY, [$component,'notifyAdmin']);
     }
-    // пример использования сервис-локатора:
+    // РїСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ СЃРµСЂРІРёСЃ-Р»РѕРєР°С‚РѕСЂР°:
     public function actionService() {
         /*
-        // Первый вариант использования (первый вариант подключения):
+        // РџРµСЂРІС‹Р№ РІР°СЂРёР°РЅС‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ (РїРµСЂРІС‹Р№ РІР°СЂРёР°РЅС‚ РїРѕРґРєР»СЋС‡РµРЅРёСЏ):
         $locator = \Yii::$app->locator;
         $cache = $locator->cache;
         */
 
         ///*
-        // Второй вариант использования (второй вариант подключения):
+        // Р’С‚РѕСЂРѕР№ РІР°СЂРёР°РЅС‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ (РІС‚РѕСЂРѕР№ РІР°СЂРёР°РЅС‚ РїРѕРґРєР»СЋС‡РµРЅРёСЏ):
         $cache = \Yii::$app->cache;
         //*/
 
@@ -48,16 +48,16 @@ class DefaultController extends Controller
 
     public function actionPath() {
         /*
-        * @yii - Указывает на папку с фреймворком в vendor
-        * @app – Указывает на папку frontend
-        * @runtime - указывает на папку frontend/runtime
-        * @webroot - указывает на папку frontend/web
-        * @web - указывает URL на папку frontend/web
-        * @vendor - указывает на папку vendor
-        * @bower – указывает на папку vendor/bower
-        * @npm – указывает на папку vendor/npm
-        * @frontend – указывает на frontend,алиас @app
-        * @backend – указывает на папку backend/
+        * @yii - РЈРєР°Р·С‹РІР°РµС‚ РЅР° РїР°РїРєСѓ СЃ С„СЂРµР№РјРІРѕСЂРєРѕРј РІ vendor
+        * @app вЂ“ РЈРєР°Р·С‹РІР°РµС‚ РЅР° РїР°РїРєСѓ frontend
+        * @runtime - СѓРєР°Р·С‹РІР°РµС‚ РЅР° РїР°РїРєСѓ frontend/runtime
+        * @webroot - СѓРєР°Р·С‹РІР°РµС‚ РЅР° РїР°РїРєСѓ frontend/web
+        * @web - СѓРєР°Р·С‹РІР°РµС‚ URL РЅР° РїР°РїРєСѓ frontend/web
+        * @vendor - СѓРєР°Р·С‹РІР°РµС‚ РЅР° РїР°РїРєСѓ vendor
+        * @bower вЂ“ СѓРєР°Р·С‹РІР°РµС‚ РЅР° РїР°РїРєСѓ vendor/bower
+        * @npm вЂ“ СѓРєР°Р·С‹РІР°РµС‚ РЅР° РїР°РїРєСѓ vendor/npm
+        * @frontend вЂ“ СѓРєР°Р·С‹РІР°РµС‚ РЅР° frontend,Р°Р»РёР°СЃ @app
+        * @backend вЂ“ СѓРєР°Р·С‹РІР°РµС‚ РЅР° РїР°РїРєСѓ backend/
         */
 //        print \Yii::getAlias('@app');
         print \Yii::getAlias('@test');

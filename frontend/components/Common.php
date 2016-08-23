@@ -13,11 +13,11 @@ class Common extends Component {
 //            ->setSubject($subject)
 //            ->setTextBody($body)
 //            ->send();
-        // обявление события
+        // РѕР±СЏРІР»РµРЅРёРµ СЃРѕР±С‹С‚РёСЏ
         $this->trigger(self::EVENT_NOTIFY);
     }
 
-    // обработчик
+    // РѕР±СЂР°Р±РѕС‚С‡РёРє
     public function notifyAdmin() {
         print "Notify Admin";
     }
